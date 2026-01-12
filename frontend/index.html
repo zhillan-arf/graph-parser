@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Graph</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Knowledge Graph</h1>
+            <div class="controls">
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Search topics...">
+                    <button id="clear-search" title="Clear search">×</button>
+                </div>
+                <div class="filter-container">
+                    <label for="course-filter">Filter by course:</label>
+                    <select id="course-filter">
+                        <option value="all">All Courses</option>
+                    </select>
+                </div>
+                <div class="layout-container">
+                    <label for="layout-select">Layout:</label>
+                    <select id="layout-select">
+                        <option value="dagre">Hierarchical (Dagre)</option>
+                        <option value="breadthfirst">Breadth First</option>
+                        <option value="cose">Force-Directed (CoSE)</option>
+                    </select>
+                </div>
+                <button id="fit-btn" title="Fit graph to view">Fit View</button>
+                <button id="reset-btn" title="Reset highlights">Reset</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="graph-container">
+                <div id="cy"></div>
+                <div id="loading">Loading graph data...</div>
+            </div>
+
+            <aside id="detail-panel" class="hidden">
+                <button id="close-panel" title="Close panel">×</button>
+                <div id="panel-content">
+                    <h2 id="topic-title"></h2>
+                    <div id="topic-meta">
+                        <span id="topic-course" class="course-badge"></span>
+                    </div>
+                    <div id="topic-links">
+                        <a id="topic-url" href="#" target="_blank">View on JM →</a>
+                    </div>
+                    <div id="prerequisites">
+                        <h3>Prerequisites</h3>
+                        <ul id="prereq-list"></ul>
+                    </div>
+                    <div id="leads-to">
+                        <h3>Leads To</h3>
+                        <ul id="leads-list"></ul>
+                    </div>
+                    <div id="topic-content">
+                        <h3>Content Preview</h3>
+                        <div id="content-text"></div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <div class="stats">
+                <span id="node-count">0 topics</span>
+                <span id="edge-count">0 edges</span>
+                <span id="visible-count">0 visible</span>
+            </div>
+            <div class="legend" id="legend"></div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
