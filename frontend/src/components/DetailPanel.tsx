@@ -102,11 +102,10 @@ export default function DetailPanel({
         </div>
 
         <div id="topic-content">
-          <h3>Content Preview</h3>
+          <h3>Content</h3>
           <div id="content-text">
             {node.data.hasContent && node.data.contentText ? (
-              node.data.contentText.substring(0, 500) +
-              (node.data.contentText.length > 500 ? '...' : '')
+              node.data.contentText
             ) : (
               <em>No content available</em>
             )}

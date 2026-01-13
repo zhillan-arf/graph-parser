@@ -102,11 +102,8 @@ router.get('/graph', async (req, res) => {
   try {
     const data = await loadGraphData();
 
-    // Truncate content_text and remove content_html for payload optimization
+    // Remove content_html for payload optimization (keep full content_text)
     for (const topic of data.topics) {
-      if (topic.content_text) {
-        topic.content_text = topic.content_text.substring(0, 500);
-      }
       topic.content_html = null;
     }
 
