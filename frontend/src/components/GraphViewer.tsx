@@ -2,7 +2,6 @@ import { useCallback, useMemo, useState, useEffect } from 'react';
 import {
   ReactFlow,
   Background,
-  Controls,
   useNodesState,
   useEdgesState,
   type Node,
@@ -13,6 +12,7 @@ import {
 import '@xyflow/react/dist/style.css';
 
 import TopicNode from './TopicNode';
+import ZoomSlider from './ZoomSlider';
 import type { GraphData, Course, LayoutType } from '../types';
 import {
   darkenColor,
@@ -20,6 +20,9 @@ import {
   getAncestors,
   type TopicNodeData,
 } from '../utils/graphUtils';
+
+// Zoom limits: max zoom out is fit view level (dynamic), max zoom in matches topic click zoom
+const MAX_ZOOM_IN = 2;
 
 interface GraphViewerProps {
   data: GraphData;
@@ -191,14 +194,14 @@ export default function GraphViewer({
         onSelectionChange={onSelectionChange}
         nodeTypes={nodeTypes}
         fitView
-        minZoom={0.1}
-        maxZoom={3}
+        minZoom={0.05}
+        maxZoom={MAX_ZOOM_IN}
         defaultEdgeOptions={{
           type: 'smoothstep',
         }}
       >
         <Background />
-        <Controls />
+        <ZoomSlider />
       </ReactFlow>
     </div>
   );

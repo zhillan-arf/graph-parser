@@ -1,0 +1,163 @@
+/* Graph Selector Styles */
+
+.graph-selector {
+  position: relative;
+}
+
+.graph-selector-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  min-width: 180px;
+  max-width: 280px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+
+.graph-selector-trigger:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.graph-selector-trigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.graph-selector-name {
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.graph-selector-chevron {
+  font-size: 0.625rem;
+  color: var(--text-secondary);
+}
+
+.graph-selector-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 280px;
+  max-width: 350px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.graph-selector-create-section {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: var(--bg-tertiary);
+}
+
+.graph-selector-create-btn {
+  flex: 1;
+  padding: 8px 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.graph-selector-create-btn:hover {
+  background: var(--bg-primary);
+  border-color: var(--accent);
+}
+
+.graph-selector-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+.graph-selector-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.graph-selector-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.graph-selector-option:hover {
+  background: var(--bg-primary);
+}
+
+.graph-selector-option.selected {
+  background: rgba(0, 113, 227, 0.1);
+}
+
+.graph-selector-option-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+
+.graph-selector-option-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+}
+
+.graph-selector-badge {
+  font-size: 0.625rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.graph-selector-badge.default {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.graph-selector-badge.readonly {
+  background: rgba(255, 200, 50, 0.2);
+  color: #8b6914;
+}
+
+.graph-selector-delete-btn {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.graph-selector-delete-btn:hover {
+  background: rgba(255, 59, 48, 0.1);
+  color: #ff3b30;
+}

@@ -3,3 +3,16 @@
 node_modules/
 __pycache__/
 *.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+
+# Environment files with secrets
+.env.local
+.env.*.local
+
+# Legacy Express server (replaced by FastAPI)
+legacy_server/

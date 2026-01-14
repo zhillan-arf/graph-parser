@@ -1,0 +1,77 @@
+.unsaved-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: rgba(255, 193, 7, 0.95);
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.unsaved-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.unsaved-banner .warning-icon {
+  font-size: 16px;
+}
+
+.unsaved-banner .message {
+  font-weight: 500;
+}
+
+.unsaved-banner-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.unsaved-banner .discard-btn {
+  padding: 6px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background: transparent;
+  color: #333;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.unsaved-banner .discard-btn:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.unsaved-banner .discard-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.unsaved-banner .save-btn {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.unsaved-banner .save-btn:hover:not(:disabled) {
+  background: #444;
+}
+
+.unsaved-banner .save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

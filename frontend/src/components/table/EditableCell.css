@@ -1,0 +1,56 @@
+.editable-cell {
+  display: inline-block;
+  min-width: 50px;
+}
+
+.editable-cell.editable {
+  cursor: text;
+  padding: 2px 4px;
+  margin: -2px -4px;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.editable-cell.editable:hover {
+  background: #f0f7ff;
+}
+
+.editable-cell.disabled {
+  color: #888;
+}
+
+.editable-cell-input {
+  width: 100%;
+  padding: 4px 8px;
+  border: 2px solid #2196f3;
+  border-radius: 4px;
+  font-size: inherit;
+  font-family: inherit;
+  outline: none;
+  background: #fff;
+}
+
+.editable-cell-input[type="color"] {
+  width: 80px;
+  height: 30px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.empty-placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+.color-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.color-swatch-small {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
